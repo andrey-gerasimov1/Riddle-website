@@ -1,0 +1,22 @@
+<!-- CREATE PAGE -->
+
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+<body>
+    <%- include('./partials/nav.ejs') %>
+    <div class='create-riddle content'>
+        <form action='/riddles' method='POST'>
+            <label for='title'>Riddle Question:</label>
+            <input type='text' id='title' name='title' required>
+            <label for='snippet'>Difficulty:</label>
+            <input type='text' id='snippet' name='snippet' required>
+            <label for='body'>Answer:</label>
+            <textarea id='body' required name='body'></textarea>
+            <label for='cred'>Credit:</label>
+            <textarea type='text' id='cred' required name='cred'></textarea>
+            <button>Submit</button>
+        </form>
+    </div>
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>

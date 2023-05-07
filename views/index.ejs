@@ -1,0 +1,22 @@
+<!-- INDEX PAGE -->
+
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+<body>
+    <%- include('./partials/nav.ejs') %>
+    <div class='riddles content'>
+        <h2>All Riddles</h2>
+        <% if (riddles.length > 0) { %>
+            <% riddles.forEach(riddle => { %>
+                <a class='single' href='/riddles/<%= riddle._id %>'>
+                    <h3 class='title'><%= riddle.title %></h3>
+                    <p class='snippet'><%= riddle.snippet %></p>
+                </a>
+            <% }) %>
+        <% } else { %>
+            <p>There are no riddles currently :(</p>
+        <% } %>
+    </div>
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>
